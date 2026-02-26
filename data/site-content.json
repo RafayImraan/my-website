@@ -1,0 +1,335 @@
+{
+  "profile": {
+    "name": "Abdul Rafay Imran",
+    "city": "Karachi, Pakistan",
+    "email": "aburafayyy@gmail.com",
+    "phone": "+92 333 2427539",
+    "github": "https://github.com/RafayImraan",
+    "linkedin": "https://www.linkedin.com/in/abdul-rafay-imran-957b44276/",
+    "cvPath": "/Abdul-Rafay-Imran-CV.pdf",
+    "tagline": "Software Engineer delivering luxury-grade digital products across Web, AI, and Analytics.",
+    "about": "I build enterprise-ready experiences with clean architecture, premium interfaces, and practical ML outcomes. My focus is measurable business impact through quality engineering.",
+    "highlights": [
+      "Enterprise web products with Next.js, React, and robust backend integrations",
+      "Applied AI/ML systems with explainability and production-minded workflows",
+      "Conversion-driven UX, scalable component architecture, and high performance"
+    ],
+    "skills": {
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Angular",
+        "PHP",
+        "Express.js",
+        "Python",
+        "Pandas",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "dashboards": ["Power BI"],
+      "databases": ["SQL", "MongoDB"],
+      "additional": ["MS Office", "Canva"]
+    },
+    "softSkills": [
+      "Effective communication",
+      "Teamwork and collaboration",
+      "Problem solving",
+      "Adaptability",
+      "Time management",
+      "Critical thinking"
+    ],
+    "languages": ["English", "Urdu"],
+    "achievements": [
+      "First Prize, Speed Programming Competition - Aptech Learning (2023)",
+      "Second Prize, Web Designing Competition - Aptech Learning (2023)"
+    ],
+    "experience": [
+      {
+        "role": "Bachelor of Science in Software Engineering",
+        "org": "University of Karachi, Karachi, Pakistan",
+        "period": "2023 - Present"
+      },
+      {
+        "role": "Diploma in Software Engineering",
+        "org": "Aptech Learning, Karachi, Pakistan",
+        "period": "2022 - Present"
+      },
+      {
+        "role": "Intermediate",
+        "org": "Adamjee Govt. Science College, Karachi, Pakistan",
+        "period": "2020 - 2022"
+      },
+      {
+        "role": "Matriculation",
+        "org": "KBV CAA Model School and College, Karachi, Pakistan",
+        "period": "2018 - 2020"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Reality Check",
+      "slug": "reality-check",
+      "stack": "React + Python (FastAPI + NLP)",
+      "summary": [
+        "Explainable AI platform detecting manipulation patterns in digital content.",
+        "Hybrid rules plus transformer pipeline with transparent rationale output.",
+        "Real-time risk queues and exportable enterprise audit reports."
+      ],
+      "outcomes": ["Higher trust scoring consistency", "Faster policy review workflows"],
+      "github": "https://github.com/RafayImraan/Reality-check",
+      "tags": ["ai", "web", "analytics"],
+      "featured": true
+    },
+    {
+      "title": "MediCore - Hospital Management System",
+      "slug": "medicore",
+      "stack": "MERN Stack",
+      "summary": [
+        "Healthcare workflow platform with role-based operations.",
+        "Appointments, billing, telehealth, and dashboard modules.",
+        "JWT auth, notifications, and responsive design."
+      ],
+      "outcomes": ["Improved operational visibility", "Cleaner patient workflow"],
+      "github": "https://github.com/RafayImraan/MediCore",
+      "tags": ["web", "enterprise"],
+      "featured": true
+    },
+    {
+      "title": "Veluxe Motors",
+      "slug": "veluxe-motors",
+      "stack": "Next.js",
+      "summary": [
+        "Premium dealership website with dynamic listings and inquiry flows.",
+        "Marketing-focused interaction design and conversion-focused sections.",
+        "Scalable components with maintainable frontend architecture."
+      ],
+      "outcomes": ["Stronger lead capture journey", "Improved brand perception"],
+      "github": "https://github.com/RafayImraan/veluxe-motors",
+      "tags": ["web", "marketing"],
+      "featured": true
+    },
+    {
+      "title": "Crop Yield Prediction in Pakistan",
+      "slug": "crop-yield",
+      "stack": "Python, ML",
+      "summary": [
+        "Modeled yield trends across regions using historical datasets.",
+        "Compared multiple models for predictive performance.",
+        "Built visual insights for practical agricultural decisions."
+      ],
+      "outcomes": ["Data-backed regional insight", "Model performance benchmarking"],
+      "github": "https://github.com/RafayImraan/Crop-Yeild-Prediction-in-Pakistan",
+      "tags": ["ai", "data"]
+    },
+    {
+      "title": "Employment and Unemployment Trend Analysis",
+      "slug": "employment-analysis",
+      "stack": "Python, Data Analytics",
+      "summary": [
+        "Analyzed labor trends including pre/post-COVID shifts.",
+        "Visualized long-term and seasonal behavior patterns.",
+        "Applied robust cleaning and statistical summaries."
+      ],
+      "outcomes": ["Clear trend reporting", "Improved insight readability"],
+      "github": "https://github.com/RafayImraan/Employment-and-Unemployment-Trend-Analysis",
+      "tags": ["data", "analytics"]
+    }
+  ],
+  "services": [
+    {
+      "slug": "web-engineering",
+      "title": "Web Engineering",
+      "description": "Premium web applications with enterprise architecture and conversion-first UX.",
+      "bullets": [
+        "Next.js and React architecture",
+        "API integrations and secure auth flows",
+        "Performance-focused delivery"
+      ]
+    },
+    {
+      "slug": "ai-ml-solutions",
+      "title": "AI and ML Solutions",
+      "description": "Applied machine learning systems designed for explainability and business adoption.",
+      "bullets": [
+        "Data preparation and model training pipelines",
+        "Evaluation and model comparison workflows",
+        "Explainable output for stakeholder trust"
+      ]
+    },
+    {
+      "slug": "analytics-and-bi",
+      "title": "Analytics and BI",
+      "description": "Decision-ready analytics with polished dashboards and clear KPI storytelling.",
+      "bullets": [
+        "Power BI and Python analytics",
+        "Custom dashboards and data visuals",
+        "Business-focused insight reporting"
+      ]
+    }
+  ],
+  "caseStudies": [
+    {
+      "slug": "reality-check",
+      "title": "Reality Check - Explainable Manipulation Risk Platform",
+      "challenge": "Editorial and policy teams needed a scalable, explainable way to detect manipulation tactics in high-volume digital text.",
+      "approach": [
+        "Designed a hybrid scoring engine combining deterministic rule checks with transformer-based contextual interpretation.",
+        "Built a React + FastAPI review interface with transparent rationale display for each risk category.",
+        "Implemented calibrated confidence and exportable audit reports for policy and governance workflows."
+      ],
+      "outcome": [
+        "Reduced analyst review friction through prioritized risk queues.",
+        "Improved confidence in moderation decisions with explainable evidence trails.",
+        "Enabled reusable reporting for enterprise and policy stakeholders."
+      ],
+      "tech": ["React", "FastAPI", "Python", "NLP"]
+    },
+    {
+      "slug": "medicore",
+      "title": "MediCore - End-to-End Hospital Workflow Platform",
+      "challenge": "Healthcare operations were fragmented across disconnected systems for appointments, billing, and telehealth.",
+      "approach": [
+        "Designed a role-based MERN architecture for admins, staff, and practitioners.",
+        "Implemented appointment management, billing modules, and telehealth workflows in one interface.",
+        "Added secure JWT auth, alerts, and dashboard metrics for daily operational visibility."
+      ],
+      "outcome": [
+        "Unified key clinical workflows in a single platform.",
+        "Improved response speed through notification-driven operations.",
+        "Provided leadership dashboards for real-time decision support."
+      ],
+      "tech": ["MongoDB", "Express", "React", "Node.js"]
+    },
+    {
+      "slug": "veluxe-motors",
+      "title": "Veluxe Motors - Premium Digital Showroom Experience",
+      "challenge": "The dealership needed a high-end digital presence that could improve lead quality and conversion flow.",
+      "approach": [
+        "Built a premium Next.js frontend architecture focused on fast rendering and smooth browsing.",
+        "Created dynamic listing sections, featured model storytelling, and optimized inquiry call-to-actions.",
+        "Applied conversion-oriented UX structure with polished visual hierarchy and mobile-first behavior."
+      ],
+      "outcome": [
+        "Strengthened brand perception with a luxury web experience.",
+        "Improved inquiry journey clarity for prospective buyers.",
+        "Established a scalable foundation for ongoing digital marketing campaigns."
+      ],
+      "tech": ["Next.js", "React", "UI Engineering", "Marketing UX"]
+    },
+    {
+      "slug": "crop-yield",
+      "title": "Crop Yield Prediction in Pakistan - Regional Forecast Intelligence",
+      "challenge": "Regional agricultural planning needed more reliable yield insight across variable climate and historical conditions.",
+      "approach": [
+        "Prepared multi-region historical datasets with robust preprocessing and feature engineering.",
+        "Trained and benchmarked multiple ML models to compare predictive reliability.",
+        "Built interpretable visual outputs for planners and decision-makers."
+      ],
+      "outcome": [
+        "Delivered clearer regional yield trend visibility.",
+        "Enabled model-backed forecasting comparisons for planning.",
+        "Improved decision confidence with interpretable analytics."
+      ],
+      "tech": ["Python", "Pandas", "Machine Learning", "Data Visualization"]
+    },
+    {
+      "slug": "employment-analysis",
+      "title": "Employment and Unemployment Trend Analysis - Labor Insight Engine",
+      "challenge": "Stakeholders needed clear understanding of long-term labor movement, COVID-era impacts, and seasonal shifts.",
+      "approach": [
+        "Integrated and cleaned multi-source labor datasets with robust date and missing-value handling.",
+        "Built comparative analytics for pre/post-COVID periods and seasonal fluctuation mapping.",
+        "Designed visuals that emphasize trend readability for non-technical audiences."
+      ],
+      "outcome": [
+        "Provided reliable labor trend narratives across multiple time windows.",
+        "Highlighted monthly volatility and structural shifts in employment behavior.",
+        "Improved communication of economic signals through concise visual storytelling."
+      ],
+      "tech": ["Python", "Pandas", "Statistical Analysis", "Visualization"]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Product Mentor",
+      "role": "Software Program Advisor",
+      "quote": "Rafay combines polished frontend craft with practical engineering discipline and delivers beyond expected quality."
+    },
+    {
+      "name": "Academic Supervisor",
+      "role": "Software Engineering Faculty",
+      "quote": "His project execution stands out for clarity, structure, and measurable outcomes."
+    }
+  ],
+  "clientLogos": ["APTECH", "ACADEMIC LAB", "HEALTH TECH", "AUTO RETAIL"],
+  "blogPosts": [
+    {
+      "slug": "reality-check-explainable-ai-platform",
+      "title": "Building Reality Check: Explainable AI for Manipulation Risk",
+      "excerpt": "How hybrid NLP scoring and transparent rationale made risk signals usable for policy and media teams.",
+      "date": "2026-02-24",
+      "readMinutes": 6,
+      "tags": ["ai", "nlp", "reality-check"],
+      "content": [
+        "Reality Check started from a practical challenge: risk scoring must be explainable, not only accurate.",
+        "A hybrid approach combining deterministic checks with transformer context created stronger trust in predictions.",
+        "The biggest product lesson was designing explanation output as a core feature, not a post-processing add-on."
+      ]
+    },
+    {
+      "slug": "medicore-enterprise-healthcare-workflows",
+      "title": "MediCore: Architecting Role-Based Healthcare Workflows",
+      "excerpt": "What it takes to unify appointments, billing, and telehealth in one operational platform.",
+      "date": "2026-02-18",
+      "readMinutes": 7,
+      "tags": ["mern", "healthtech", "medicore"],
+      "content": [
+        "Healthcare systems fail when operational modules are disconnected and user roles are unclear.",
+        "MediCore focused on role-based pathways to reduce friction in everyday hospital operations.",
+        "Security and notification flows were treated as first-class requirements from day one."
+      ]
+    },
+    {
+      "slug": "veluxe-motors-luxury-dealership-experience",
+      "title": "Designing Veluxe Motors: Luxury UX for Conversion",
+      "excerpt": "How premium interface direction and structure improved the digital dealership inquiry journey.",
+      "date": "2026-02-12",
+      "readMinutes": 5,
+      "tags": ["nextjs", "ux", "veluxe-motors"],
+      "content": [
+        "Luxury websites should not only look premium; they should reduce decision friction.",
+        "Veluxe Motors used clear visual hierarchy, curated content blocks, and strong CTA positioning.",
+        "Performance and elegance must coexist to maintain both brand quality and lead conversion."
+      ]
+    },
+    {
+      "slug": "crop-yield-ml-for-agriculture-pakistan",
+      "title": "Crop Yield Forecasting in Pakistan with Practical ML",
+      "excerpt": "From regional data cleaning to model benchmarking and interpretable agricultural insight.",
+      "date": "2026-02-06",
+      "readMinutes": 6,
+      "tags": ["ml", "agriculture", "crop-yield"],
+      "content": [
+        "Agricultural forecasting depends heavily on data preparation quality and regional context handling.",
+        "Model comparison was used to balance predictive quality with operational interpretability.",
+        "Visual storytelling helped translate model outputs into practical planning insight."
+      ]
+    },
+    {
+      "slug": "employment-analysis-labor-trend-intelligence",
+      "title": "Labor Trend Intelligence: Employment Analysis at Scale",
+      "excerpt": "A practical method for communicating post-COVID and seasonal employment behavior clearly.",
+      "date": "2026-01-29",
+      "readMinutes": 6,
+      "tags": ["data-analytics", "economics", "employment-analysis"],
+      "content": [
+        "Labor trend analysis becomes useful when patterns are compared across structural time windows.",
+        "This project prioritized clarity in visual communication for non-technical decision makers.",
+        "Reliable cleaning and temporal consistency were central to trustworthy trend interpretation."
+      ]
+    }
+  ]
+}

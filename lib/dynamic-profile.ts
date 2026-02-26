@@ -1,0 +1,159 @@
+import { getSiteContent } from "@/lib/content-store";
+import type { RuntimeContent, RuntimeProject } from "@/lib/types";
+
+function extractRepoPath(url: string): string | null {
+  const match = url.match(/github\.com\/([^/]+\/[^/#?]+)/i);
+  return match?.[1] ?? null;
+}
+
+function toTitleCase(value: string): string {
+  return value
+    .split(/[-_]/g)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function toSlug(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function inferTags(repo: { language?: string | null; name: string; description?: string | null }): string[] {
+  const tags = new Set<string>(["enterprise"]);
+  const source = `${repo.name} ${repo.description ?? ""} ${repo.language ?? ""}`.toLowerCase();
+
+  if (/(react|next|mern|express|node|php|angular|frontend|web)/.test(source)) tags.add("web");
+  if (/(python|ml|ai|nlp|classification|regression|model)/.test(source)) tags.add("ai");
+  if (/(data|analysis|analytics|pandas|seaborn|matplotlib|power bi)/.test(source)) tags.add("data");
+  if (tags.size === 1) tags.add("web");
+  return [...tags];
+}
+
+function githubHeaders(): HeadersInit {
+  const token = process.env.GITHUB_TOKEN;
+  if (token) {
+    return {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "User-Agent": "rafay-portfolio-runtime"
+    };
+  }
+  return {
+    Accept: "application/vnd.github+json",
+    "User-Agent": "rafay-portfolio-runtime"
+  };
+}
+
+export async function getRuntimeContent(): Promise<RuntimeContent> {
+  const content = await getSiteContent();
+  const githubUser = "RafayImraan";
+  let githubFollowers: number | null = null;
+  let githubRepos: number | null = null;
+  let totalStars: number | null = null;
+  const repoMap = new Map<string, { stars: number; forks: number; updatedAt: string }>();
+  let githubRepositories: Array<{
+    name: string;
+    full_name: string;
+    html_url: string;
+    description: string | null;
+    language: string | null;
+    stargazers_count: number;
+    forks_count: number;
+    pushed_at: string;
+  }> = [];
+
+  try {
+    const [userRes, repoRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${githubUser}`, {
+        cache: "no-store",
+        headers: githubHeaders()
+      }),
+      fetch(`https://api.github.com/users/${githubUser}/repos?per_page=100&sort=updated`, {
+        cache: "no-store",
+        headers: githubHeaders()
+      })
+    ]);
+
+    if (userRes.ok) {
+      const userData = (await userRes.json()) as { followers?: number; public_repos?: number };
+      githubFollowers = userData.followers ?? null;
+      githubRepos = userData.public_repos ?? null;
+    }
+
+    if (repoRes.ok) {
+      const repos = (await repoRes.json()) as Array<{
+        name: string;
+        full_name: string;
+        html_url: string;
+        description: string | null;
+        language: string | null;
+        stargazers_count: number;
+        forks_count: number;
+        pushed_at: string;
+      }>;
+
+      githubRepositories = repos;
+      totalStars = repos.reduce((sum, repo) => sum + (repo.stargazers_count ?? 0), 0);
+      repos.forEach((repo) => {
+        repoMap.set(repo.full_name.toLowerCase(), {
+          stars: repo.stargazers_count ?? 0,
+          forks: repo.forks_count ?? 0,
+          updatedAt: repo.pushed_at
+        });
+      });
+    }
+  } catch {
+    // keep page resilient if external API is unavailable
+  }
+
+  const projects: RuntimeProject[] = content.projects.map((project) => {
+    if (!project.github) return project;
+    const path = extractRepoPath(project.github);
+    if (!path) return project;
+    const found = repoMap.get(path.toLowerCase());
+    if (!found) return project;
+    return { ...project, stars: found.stars, forks: found.forks, updatedAt: found.updatedAt };
+  });
+
+  const curatedRepoPaths = new Set(
+    content.projects
+      .map((project) => (project.github ? extractRepoPath(project.github)?.toLowerCase() : null))
+      .filter((value): value is string => Boolean(value))
+  );
+
+  const syncedProjects: RuntimeProject[] = githubRepositories
+    .filter((repo) => !curatedRepoPaths.has(repo.full_name.toLowerCase()))
+    .map((repo) => ({
+      title: toTitleCase(repo.name),
+      slug: `repo-${toSlug(repo.name)}`,
+      stack: repo.language ? `${repo.language} | GitHub Repository` : "GitHub Repository",
+      summary: [
+        repo.description || "Repository synced automatically from GitHub profile.",
+        "Included through runtime sync to keep the portfolio complete and up to date."
+      ],
+      outcomes: ["Live repository visibility", "Automated portfolio freshness"],
+      github: repo.html_url,
+      tags: inferTags(repo),
+      featured: false,
+      stars: repo.stargazers_count ?? 0,
+      forks: repo.forks_count ?? 0,
+      updatedAt: repo.pushed_at,
+      autogenerated: true
+    }));
+
+  return {
+    ...content,
+    projects: [...projects, ...syncedProjects],
+    runtime: {
+      githubFollowers,
+      githubRepos,
+      totalStars,
+      syncedRepos: syncedProjects.length,
+      generatedAt: new Date().toISOString(),
+      timezone: "Asia/Karachi"
+    }
+  };
+}
