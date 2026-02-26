@@ -79,7 +79,6 @@
         "Real-time risk queues and exportable enterprise audit reports."
       ],
       "outcomes": ["Higher trust scoring consistency", "Faster policy review workflows"],
-      "github": "https://github.com/RafayImraan/Reality-check",
       "tags": ["ai", "web", "analytics"],
       "featured": true
     },
@@ -134,7 +133,6 @@
         "Applied robust cleaning and statistical summaries."
       ],
       "outcomes": ["Clear trend reporting", "Improved insight readability"],
-      "github": "https://github.com/RafayImraan/Employment-and-Unemployment-Trend-Analysis",
       "tags": ["data", "analytics"]
     }
   ],

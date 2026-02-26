@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import MotionSystem from "@/components/motion-system";
 import RouteTransition from "@/components/route-transition";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

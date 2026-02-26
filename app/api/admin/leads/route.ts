@@ -9,6 +9,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
 
-  const leads = await getLeads();
-  return NextResponse.json({ ok: true, leads });
+  try {
+    const leads = await getLeads();
+    return NextResponse.json({ ok: true, leads });
+  } catch {
+    return NextResponse.json({ ok: false, error: "Could not load leads" }, { status: 500 });
+  }
 }

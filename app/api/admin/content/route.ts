@@ -9,8 +9,12 @@ export async function GET(request: Request) {
   if (!isAdminAuthorized(request)) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
-  const content = await getSiteContent();
-  return NextResponse.json({ ok: true, content });
+  try {
+    const content = await getSiteContent();
+    return NextResponse.json({ ok: true, content });
+  } catch {
+    return NextResponse.json({ ok: false, error: "Could not load content" }, { status: 500 });
+  }
 }
 
 export async function PUT(request: Request) {
@@ -18,15 +22,24 @@ export async function PUT(request: Request) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
 
+  let body: { content?: SiteContent };
   try {
-    const body = (await request.json()) as { content?: SiteContent };
-    if (!body.content) {
-      return NextResponse.json({ ok: false, error: "Missing content payload" }, { status: 400 });
-    }
+    body = (await request.json()) as { content?: SiteContent };
+  } catch {
+    return NextResponse.json({ ok: false, error: "Invalid content payload" }, { status: 400 });
+  }
 
+  if (!body.content) {
+    return NextResponse.json({ ok: false, error: "Missing content payload" }, { status: 400 });
+  }
+
+  try {
     await saveSiteContent(body.content);
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ ok: false, error: "Invalid content payload" }, { status: 400 });
+    return NextResponse.json(
+      { ok: false, error: "Could not save content. Configure persistent storage for production." },
+      { status: 503 }
+    );
   }
 }

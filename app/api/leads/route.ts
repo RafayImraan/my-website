@@ -15,25 +15,41 @@ const leadSchema = z.object({
 });
 
 export async function POST(request: Request) {
+  let payload: unknown;
+
   try {
-    const payload = await request.json();
-    const parsed = leadSchema.safeParse(payload);
-    if (!parsed.success) {
-      const firstError = parsed.error.issues[0]?.message ?? "Invalid request payload.";
-      return NextResponse.json({ ok: false, error: firstError }, { status: 400 });
-    }
-    const data = parsed.data;
-    const lead = {
-      id: crypto.randomUUID(),
-      createdAt: new Date().toISOString(),
-      ...data
-    };
-
-    await addLead(lead);
-    const emailSent = await sendLeadNotification(lead).catch(() => false);
-
-    return NextResponse.json({ ok: true, emailSent });
+    payload = await request.json();
   } catch {
     return NextResponse.json({ ok: false, error: "Invalid form submission payload." }, { status: 400 });
   }
+
+  const parsed = leadSchema.safeParse(payload);
+  if (!parsed.success) {
+    const firstError = parsed.error.issues[0]?.message ?? "Invalid request payload.";
+    return NextResponse.json({ ok: false, error: firstError }, { status: 400 });
+  }
+
+  const data = parsed.data;
+  const lead = {
+    id: crypto.randomUUID(),
+    createdAt: new Date().toISOString(),
+    ...data
+  };
+
+  let persisted = true;
+  try {
+    await addLead(lead);
+  } catch {
+    persisted = false;
+  }
+
+  const emailSent = await sendLeadNotification(lead).catch(() => false);
+  if (!persisted && !emailSent) {
+    return NextResponse.json(
+      { ok: false, error: "Could not store inquiry. Configure persistent storage for production." },
+      { status: 503 }
+    );
+  }
+
+  return NextResponse.json({ ok: true, emailSent, persisted });
 }
