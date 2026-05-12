@@ -25,12 +25,13 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const { slug } = await params;
   const content = await getSiteContent();
   const study = content.caseStudies.find((item) => item.slug === slug);
+  const project = content.projects.find((item) => item.slug === slug);
   if (!study) notFound();
 
   const kpis = [
-    { label: "Approach Tracks", value: study.approach.length },
-    { label: "Outcome Signals", value: study.outcome.length },
-    { label: "Technology Pillars", value: study.tech.length }
+    { label: "Approach Steps", value: study.approach.length },
+    { label: "Key Outcomes", value: study.outcome.length },
+    { label: "Technologies", value: study.tech.length }
   ];
 
   return (
@@ -55,7 +56,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           </article>
 
           <article className="card" data-reveal>
-            <p className="list-title">Approach Timeline</p>
+            <p className="list-title">Implementation Approach</p>
             <ol className="timeline-list">
               {study.approach.map((item, index) => (
                 <li key={item}>
@@ -75,6 +76,28 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             </ul>
             <p className="list-title">Technology</p>
             <p>{study.tech.join(" | ")}</p>
+            {(project?.github || project?.live || project?.video) && (
+              <>
+                <p className="list-title">Project Links</p>
+                <div className="project-links">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      GitHub
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer">
+                      Live Demo
+                    </a>
+                  )}
+                  {project.video && (
+                    <a href={project.video} target="_blank" rel="noreferrer">
+                      Video Walkthrough
+                    </a>
+                  )}
+                </div>
+              </>
+            )}
           </article>
         </div>
       </section>

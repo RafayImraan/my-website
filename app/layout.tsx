@@ -8,20 +8,20 @@ const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Abdul Rafay Imran | Enterprise Portfolio",
+  title: "Abdul Rafay Imran | Software Engineer",
   description:
-    "Premium enterprise portfolio of Abdul Rafay Imran - Software Engineer, ML practitioner, and modern product builder.",
+    "Portfolio of Abdul Rafay Imran, a Software Engineer focused on full-stack development, machine learning, and analytics.",
   openGraph: {
-    title: "Abdul Rafay Imran | Enterprise Portfolio",
-    description: "Enterprise-grade portfolio for hiring, partnerships, and project collaborations.",
+    title: "Abdul Rafay Imran | Software Engineer",
+    description: "Professional portfolio for software engineering, machine learning, and project work.",
     url: siteUrl,
     siteName: "Abdul Rafay Imran Portfolio",
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Rafay Imran | Enterprise Portfolio",
-    description: "Luxury enterprise portfolio powered by Next.js."
+    title: "Abdul Rafay Imran | Software Engineer",
+    description: "Professional portfolio built with Next.js."
   }
 };
 
@@ -42,6 +42,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <MotionSystem />

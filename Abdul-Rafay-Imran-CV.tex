@@ -1,0 +1,206 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,margin=0.68in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{setspace}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=3pt,topsep=4pt}
+
+\definecolor{ink}{HTML}{172033}
+\definecolor{muted}{HTML}{5E6B85}
+\definecolor{accent}{HTML}{B7791F}
+\definecolor{line}{HTML}{D8DEE9}
+\definecolor{soft}{HTML}{F7F8FB}
+
+\titleformat{\section}
+  {\Large\bfseries\color{ink}}
+  {}
+  {0em}
+  {}
+  [\vspace{0.2em}\color{line}\titlerule]
+
+\newcommand{\headerline}[1]{\textcolor{muted}{#1}}
+\newcommand{\roleline}[1]{{\large\color{accent}\bfseries #1}}
+\newcommand{\entrymeta}[1]{{\small\color{muted}#1}}
+\newcommand{\skilllabel}[1]{{\bfseries\color{ink}#1}}
+
+\newcommand{\cvproject}[4]{
+  \vspace{0.4em}
+  {\bfseries\color{ink}#1} \hfill {\entrymeta{#2}} \\
+  {\small\color{accent}#3}
+  \begin{itemize}
+    #4
+  \end{itemize}
+}
+
+\begin{document}
+
+\begingroup
+\setstretch{1.04}
+
+{\fontsize{24}{26}\selectfont\bfseries\color{ink} Abdul Rafay Imran} \\
+\vspace{4pt}
+\roleline{Software Engineering Student | Full-Stack Development | Applied AI} \\
+\vspace{8pt}
+\headerline{Karachi, Pakistan}
+\hspace{0.8em}|\hspace{0.8em}
+\href{mailto:aburafayyy@gmail.com}{aburafayyy@gmail.com}
+\hspace{0.8em}|\hspace{0.8em}
++92 333 2427539
+\hspace{0.8em}|\hspace{0.8em}
+\href{https://github.com/RafayImraan}{GitHub}
+\hspace{0.8em}|\hspace{0.8em}
+\href{https://www.linkedin.com/in/abdul-rafay-imran-957b44276/}{LinkedIn}
+
+\vspace{0.85em}
+\color{line}\hrule
+\vspace{0.9em}
+
+\section*{Professional Summary}
+\justifying
+\color{ink}
+Software Engineering student focused on full-stack development, applied AI, and modern web systems. Built end-to-end projects across React, Next.js, Node.js, FastAPI, and machine learning, with hands-on experience in secure APIs, system design, and scalable application architecture. Interested in software engineering roles across full-stack, frontend, backend, and AI-enabled product development.
+
+\section*{Technical Skills}
+\begin{tabularx}{\textwidth}{>{\bfseries\color{ink}}p{0.22\textwidth}X}
+Programming Languages & JavaScript, TypeScript, Python, Solidity, Cairo, PHP, SQL \\
+Frontend & React.js, Next.js, Angular, Tailwind CSS, Framer Motion, Vite, HTML5, CSS3 \\
+Backend & Node.js, Express.js, FastAPI, REST APIs, WebSockets, JWT, OAuth, RBAC \\
+AI / Machine Learning & scikit-learn, XGBoost, Random Forest, Transformers, NLP, MedGemma, Pandas, NumPy \\
+Blockchain / Web3 & Hedera, Starknet, EVM, ZK-Proofs, HTLCs, Atomic Swaps, DeFi Protocols \\
+Databases / Tools & MongoDB, MySQL, Redis, Docker, Git, GitHub, CI/CD \\
+\end{tabularx}
+
+\section*{Education}
+{\bfseries\color{ink} Bachelor of Science in Software Engineering} \hfill {\entrymeta{2023 -- Present}} \\
+University of Karachi, Karachi, Pakistan
+
+\vspace{0.45em}
+
+{\bfseries\color{ink} Diploma in Software Engineering} \hfill {\entrymeta{2022 -- 2025}} \\
+Aptech Learning, Karachi, Pakistan
+
+\section*{Selected Projects}
+
+\cvproject
+  {ShadowPay}
+  {Cairo, Starknet, Next.js, ZK-Proofs}
+  {Privacy-Preserving Bitcoin Payment Protocol}
+  {
+    \item Built a privacy-focused payment protocol on Starknet using commitments and nullifier-based verification.
+    \item Developed Cairo contracts for proof validation, commitment storage, and double-spend prevention.
+    \item Integrated the protocol with a Next.js frontend and wallet connection flow.
+  }
+
+\cvproject
+  {Reality Check}
+  {React, FastAPI, Transformers, NLP}
+  {Explainable AI Manipulation Detector}
+  {
+    \item Built an explainable AI platform for detecting manipulation patterns in text.
+    \item Combined rule-based analysis with transformer models, confidence scoring, and evidence validation.
+    \item Delivered a full-stack review system with dashboards, simulations, and batch processing support.
+  }
+
+\cvproject
+  {FrostByte}
+  {Next.js, FastAPI, Chrome Extension}
+  {AI Cybersecurity Defense System}
+  {
+    \item Developed a cybersecurity platform for phishing and malicious URL detection.
+    \item Built a browser extension for live scanning, warnings, and risk highlighting.
+    \item Added analytics, monitoring history, and alerting for practical security workflows.
+  }
+
+\cvproject
+  {TrustNet AI}
+  {React, FastAPI, Node.js, Hedera}
+  {B2B Trust Coordination Platform}
+  {
+    \item Designed a trust coordination platform for onboarding, payouts, and risk evaluation.
+    \item Added auditability with Hedera-backed trust records and structured workflows.
+    \item Implemented multi-tenant features, role-based controls, and integration support.
+  }
+
+\cvproject
+  {GridMind AI}
+  {FastAPI, scikit-learn, React}
+  {Urban Infrastructure Failure Predictor}
+  {
+    \item Built a system for predicting infrastructure failures across urban networks.
+    \item Combined rule-based simulations with machine learning for explainable risk analysis.
+    \item Delivered reports, scenario simulations, and monitoring tools for ongoing evaluation.
+  }
+
+\cvproject
+  {MedAssist}
+  {React, FastAPI, MedGemma, Docker}
+  {Offline Clinical Triage AI}
+  {
+    \item Built an offline-capable clinical triage assistant using symptoms, vitals, and history.
+    \item Implemented dual-path inference with model-based and deterministic fallback behavior.
+    \item Containerized the system for local, CPU, and GPU deployment options.
+  }
+
+\cvproject
+  {MediCore}
+  {MongoDB, Express, React, Node.js}
+  {Hospital Management System}
+  {
+    \item Built a hospital management system for appointments, billing, telehealth, feedback, and dashboards.
+    \item Implemented JWT authentication, RBAC, notifications, caching, and analytics views.
+    \item Designed the platform for responsive use across different user roles and devices.
+  }
+
+\cvproject
+  {BSwap}
+  {Next.js, Bitcoin Testnet, Hedera Testnet, HTLC}
+  {Cross-Chain Atomic Swap Protocol}
+  {
+    \item Built a cross-chain atomic swap workflow between Bitcoin and Hedera.
+    \item Implemented HTLC-based claim and refund logic with monitoring support.
+    \item Developed a dashboard and coordination API for swap execution.
+  }
+
+\cvproject
+  {ARIA}
+  {React, TypeScript, Vite, Tailwind CSS}
+  {Interactive Narrative Simulation Engine}
+  {
+    \item Built an interactive narrative simulation with branching flows and live audience voting.
+    \item Added configurable voting windows, modular story logic, and dynamic state updates.
+  }
+
+\section*{Additional Projects}
+\color{ink}
+GBF, GitHub Time Machine, Veluxe Motors, Crop Yield Prediction, Employment Trend Analysis, Weather Analysis, Car Price Prediction, Portfolio
+
+\section*{Achievements}
+\begin{itemize}
+  \item First Prize, Speed Programming Competition, Aptech Learning (2023)
+  \item Second Prize, Web Designing Competition, Aptech Learning (2023)
+\end{itemize}
+
+\section*{Additional Information}
+\begin{tabularx}{\textwidth}{>{\bfseries\color{ink}}p{0.22\textwidth}X}
+Methodologies & Agile/Scrum, CI/CD, Code Review, Technical Documentation \\
+Soft Skills & Communication, Problem Solving, Collaboration, Analytical Thinking \\
+Languages & English, Urdu \\
+\end{tabularx} 
+
+\endgroup
+\end{document}

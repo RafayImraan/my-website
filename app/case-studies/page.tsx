@@ -16,7 +16,7 @@ export default async function CaseStudiesPage() {
       <SiteNav />
       <section className="section" data-reveal>
         <div className="container">
-          <p className="eyebrow">Business Outcomes</p>
+          <p className="eyebrow">Project Details</p>
           <h1>Case Studies</h1>
           <div className="project-grid">
             {content.caseStudies.map((study) => (
@@ -24,8 +24,8 @@ export default async function CaseStudiesPage() {
                 <h3>{study.title}</h3>
                 <p>{study.challenge}</p>
                 <div className="kpi-strip">
-                  <span>{study.approach.length} implementation pillars</span>
-                  <span>{study.outcome.length} outcome highlights</span>
+                  <span>{study.approach.length} implementation steps</span>
+                  <span>{study.outcome.length} key outcomes</span>
                 </div>
                 <p className="list-title">Tech Stack</p>
                 <p>{study.tech.join(" | ")}</p>

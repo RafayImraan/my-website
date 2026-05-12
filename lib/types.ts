@@ -6,6 +6,7 @@ export type Project = {
   outcomes: string[];
   github?: string;
   live?: string;
+  video?: string;
   tags: string[];
   featured?: boolean;
 };
@@ -94,6 +95,7 @@ export type RuntimeContent = Omit<SiteContent, "projects"> & {
     totalStars: number | null;
     syncedRepos: number;
     generatedAt: string;
+    generatedLabel: string;
     timezone: string;
   };
 };

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const content = await getSiteContent();
   const post = content.blogPosts.find((item) => item.slug === slug);
   if (!post) return { title: "Article Not Found" };
-  return { title: `${post.title} | Insights`, description: post.excerpt };
+  return { title: `${post.title} | Articles`, description: post.excerpt };
 }
 
 export default async function BlogDetailPage({ params }: Props) {
@@ -32,7 +32,7 @@ export default async function BlogDetailPage({ params }: Props) {
       <SiteNav />
       <section className="section" data-reveal>
         <div className="container narrow">
-          <p className="eyebrow">Insight Article</p>
+          <p className="eyebrow">Article</p>
           <h1>{post.title}</h1>
           <p className="repo-meta">
             Published: {post.date} | {post.readMinutes} min read

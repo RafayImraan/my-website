@@ -6,7 +6,7 @@ import { getSiteContent } from "@/lib/content-store";
 
 export const metadata: Metadata = {
   title: "Insights | Abdul Rafay Imran",
-  description: "Thought leadership on enterprise web, AI, and analytics execution."
+  description: "Articles on web development, machine learning, and project implementation."
 };
 
 export default async function BlogPage() {
@@ -16,7 +16,7 @@ export default async function BlogPage() {
       <SiteNav />
       <section className="section" data-reveal>
         <div className="container">
-          <p className="eyebrow">Insights</p>
+          <p className="eyebrow">Writing</p>
           <h1>Articles</h1>
           <div className="project-grid">
             {content.blogPosts.map((post) => (

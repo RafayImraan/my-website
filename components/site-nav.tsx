@@ -21,9 +21,6 @@ export default function SiteNav() {
           <Link className="nav-link" data-magnetic data-magnetic-strength="8" href="/recruiters">
             Recruiters
           </Link>
-          <Link className="nav-link" data-magnetic data-magnetic-strength="8" href="/admin">
-            Admin
-          </Link>
         </nav>
       </div>
     </header>

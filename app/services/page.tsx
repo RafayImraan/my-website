@@ -5,7 +5,7 @@ import { getSiteContent } from "@/lib/content-store";
 
 export const metadata: Metadata = {
   title: "Services | Abdul Rafay Imran",
-  description: "Enterprise web engineering, AI/ML solutions, and analytics services."
+  description: "Web development, machine learning, and analytics services."
 };
 
 export default async function ServicesPage() {
@@ -15,8 +15,8 @@ export default async function ServicesPage() {
       <SiteNav />
       <section className="section" data-reveal>
         <div className="container">
-          <p className="eyebrow">Service Lines</p>
-          <h1>Premium Services</h1>
+          <p className="eyebrow">Services</p>
+          <h1>What I Work On</h1>
           <div className="project-grid">
             {content.services.map((service) => (
               <article key={service.slug} className="card" data-reveal>
