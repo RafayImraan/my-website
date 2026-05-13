@@ -1,8 +1,25 @@
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { kv } from "@vercel/kv";
+import type { VercelKV } from "@vercel/kv";
 import type { LeadRecord, SiteContent } from "@/lib/types";
+
+const KV_IS_CONFIGURED = Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+
+let _kv: VercelKV | null | undefined;
+
+async function getKv(): Promise<VercelKV | null> {
+  if (!KV_IS_CONFIGURED) return null;
+  if (_kv !== undefined) return _kv;
+  try {
+    const mod = await import("@vercel/kv");
+    _kv = mod.kv;
+    return _kv;
+  } catch {
+    _kv = null;
+    return null;
+  }
+}
 
 const SOURCE_DATA_DIR = path.join(process.cwd(), "data");
 const MUTABLE_DATA_DIR = process.env.VERCEL ? path.join(os.tmpdir(), "rafay-portfolio-data") : SOURCE_DATA_DIR;
@@ -12,7 +29,6 @@ const SOURCE_CONTENT_FILE = path.join(SOURCE_DATA_DIR, "site-content.json");
 
 const KV_SITE_CONTENT_KEY = "portfolio:site-content";
 const KV_LEADS_KEY = "portfolio:leads";
-const KV_IS_CONFIGURED = Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
 
 async function readJson<T>(filePath: string): Promise<T> {
   const raw = await fs.readFile(filePath, "utf8");
@@ -52,27 +68,30 @@ async function getFileContentWithSeedFallback(): Promise<SiteContent> {
 }
 
 export async function getSiteContent(): Promise<SiteContent> {
-  if (KV_IS_CONFIGURED) {
-    const stored = await kv.get<SiteContent>(KV_SITE_CONTENT_KEY);
+  const kvc = await getKv();
+  if (kvc) {
+    const stored = await kvc.get<SiteContent>(KV_SITE_CONTENT_KEY);
     if (stored) return stored;
     const seed = await getFileContentWithSeedFallback();
-    await kv.set(KV_SITE_CONTENT_KEY, seed);
+    await kvc.set(KV_SITE_CONTENT_KEY, seed);
     return seed;
   }
   return getFileContentWithSeedFallback();
 }
 
 export async function saveSiteContent(content: SiteContent): Promise<void> {
-  if (KV_IS_CONFIGURED) {
-    await kv.set(KV_SITE_CONTENT_KEY, content);
+  const kvc = await getKv();
+  if (kvc) {
+    await kvc.set(KV_SITE_CONTENT_KEY, content);
     return;
   }
   await writeJson(CONTENT_FILE, content);
 }
 
 export async function getLeads(): Promise<LeadRecord[]> {
-  if (KV_IS_CONFIGURED) {
-    const raw = await kv.lrange<unknown[]>(KV_LEADS_KEY, 0, 499);
+  const kvc = await getKv();
+  if (kvc) {
+    const raw = await kvc.lrange<unknown[]>(KV_LEADS_KEY, 0, 499);
     return raw.map(parseLead).filter((lead): lead is LeadRecord => Boolean(lead));
   }
 
@@ -84,9 +103,10 @@ export async function getLeads(): Promise<LeadRecord[]> {
 }
 
 export async function addLead(lead: LeadRecord): Promise<void> {
-  if (KV_IS_CONFIGURED) {
-    await kv.lpush(KV_LEADS_KEY, JSON.stringify(lead));
-    await kv.ltrim(KV_LEADS_KEY, 0, 999);
+  const kvc = await getKv();
+  if (kvc) {
+    await kvc.lpush(KV_LEADS_KEY, JSON.stringify(lead));
+    await kvc.ltrim(KV_LEADS_KEY, 0, 999);
     return;
   }
 
