@@ -1,56 +1,69 @@
 import type { Metadata } from "next";
-import MotionSystem from "@/components/motion-system";
-import RouteTransition from "@/components/route-transition";
-import { getSiteUrl } from "@/lib/site-url";
+import { Syne, DM_Sans, DM_Mono } from "next/font/google";
+import CustomCursor from "@/components/CustomCursor";
+import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
-const siteUrl = getSiteUrl();
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-dm-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL("https://aburafayyy.vercel.app"),
   title: "Abdul Rafay Imran | Software Engineer",
   description:
-    "Portfolio of Abdul Rafay Imran, a Software Engineer focused on full-stack development, machine learning, and analytics.",
+    "I build systems that scale, protocols that trustlessly transact, and AI that explains itself. Software engineer across backend, full-stack, Web3, and AI/ML.",
   openGraph: {
     title: "Abdul Rafay Imran | Software Engineer",
-    description: "Professional portfolio for software engineering, machine learning, and project work.",
-    url: siteUrl,
-    siteName: "Abdul Rafay Imran Portfolio",
-    type: "website"
+    description:
+      "I build systems that scale, protocols that trustlessly transact, and AI that explains itself.",
+    url: "https://aburafayyy.vercel.app",
+    siteName: "Abdul Rafay Imran",
+    type: "website",
+    locale: "en_US",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Abdul Rafay Imran | Software Engineer",
-    description: "Professional portfolio built with Next.js."
-  }
+    description:
+      "I build systems that scale, protocols that trustlessly transact, and AI that explains itself.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Abdul Rafay Imran",
-    url: siteUrl,
-    jobTitle: "Software Engineer",
-    email: "aburafayyy@gmail.com",
-    sameAs: ["https://github.com/RafayImraan"]
-  };
-
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-      </head>
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${dmMono.variable}`}>
       <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <MotionSystem />
-        <RouteTransition>{children}</RouteTransition>
+        <CustomCursor />
+        <ScrollProgress />
+        {children}
       </body>
     </html>
   );
