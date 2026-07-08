@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award } from "lucide-react";
+import { BriefcaseBusiness, ExternalLink, GraduationCap, Award } from "lucide-react";
 
 const education = [
   {
@@ -19,6 +19,19 @@ const education = [
 ];
 
 const credentials = [
+  { icon: BriefcaseBusiness, label: "CodeAlpha Internship" },
+  {
+    icon: BriefcaseBusiness,
+    label: "British Airways Data Science Job Simulation - Forage",
+    meta: "Completed June 3, 2026",
+    href: "/certificates/british-airways-data-science-job-simulation.pdf",
+  },
+  {
+    icon: BriefcaseBusiness,
+    label: "Walmart Advanced Software Engineering Job Simulation - Forage",
+    meta: "Completed June 3, 2026",
+    href: "/certificates/walmart-advanced-software-engineering-job-simulation.pdf",
+  },
   { icon: Award, label: "Intermediate Machine Learning - Kaggle" },
   { icon: Award, label: "Machine Learning Explainability - Kaggle" },
   { icon: Award, label: "Data Visualization - Kaggle" },
@@ -77,11 +90,12 @@ export default function Education() {
 
           <div>
             <h3 className="mb-6 font-display text-lg font-bold text-text-primary">
-              Certificates
+              Certificates & Experience
             </h3>
             <div className="space-y-3">
               {credentials.map((credential, i) => {
                 const Icon = credential.icon;
+                const Tag = credential.href ? "a" : "div";
                 return (
                 <motion.div
                   key={credential.label}
@@ -89,10 +103,27 @@ export default function Education() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.5, delay: i * 0.12 }}
-                  className="flex items-center gap-3 rounded-xl border border-[#1a1a1a] bg-[#0f0f0f] p-4"
+                  className="rounded-xl border border-[#1a1a1a] bg-[#0f0f0f] transition-colors hover:border-accent/30"
                 >
-                  <Icon className="h-4 w-4 shrink-0 text-[#c8a96e]" />
-                  <span className="font-body text-sm text-text-muted">{credential.label}</span>
+                  <Tag
+                    href={credential.href}
+                    target={credential.href ? "_blank" : undefined}
+                    rel={credential.href ? "noopener noreferrer" : undefined}
+                    className="flex items-center gap-3 p-4"
+                  >
+                    <Icon className="h-4 w-4 shrink-0 text-[#c8a96e]" />
+                    <span className="flex-1">
+                      <span className="block font-body text-sm text-text-muted">
+                        {credential.label}
+                      </span>
+                      {credential.meta && (
+                        <span className="mt-1 block font-mono text-xs text-text-muted/60">
+                          {credential.meta}
+                        </span>
+                      )}
+                    </span>
+                    {credential.href && <ExternalLink className="h-4 w-4 shrink-0 text-text-muted/60" />}
+                  </Tag>
                 </motion.div>
                 );
               })}

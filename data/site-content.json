@@ -55,11 +55,19 @@
     "achievements": [
       "First Prize, Speed Programming Competition - Aptech Learning (2023)",
       "Second Prize, Web Designing Competition - Aptech Learning (2023)",
+      "CodeAlpha Internship",
+      "British Airways Data Science Job Simulation - Forage (June 3, 2026)",
+      "Walmart Advanced Software Engineering Job Simulation - Forage (June 3, 2026)",
       "Intermediate Machine Learning - Kaggle",
       "Machine Learning Explainability - Kaggle",
       "Data Visualization - Kaggle"
     ],
     "experience": [
+      {
+        "role": "Internship",
+        "org": "CodeAlpha",
+        "period": "Completed"
+      },
       {
         "role": "Bachelor of Science in Software Engineering",
         "org": "University of Karachi, Karachi, Pakistan",
