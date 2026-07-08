@@ -4,10 +4,10 @@ import { useEffect, useState, useMemo, useRef } from "react";
 import { motion, useSpring } from "framer-motion";
 
 const roles = [
-  "Software Engineer",
-  "Backend Engineer",
-  "Web3 Builder",
   "AI/ML Developer",
+  "Applied AI Engineer",
+  "Machine Learning Developer",
+  "Full-Stack AI Builder",
 ];
 
 function Typewriter({ words }: { words: string[] }) {
@@ -158,7 +158,7 @@ export default function Hero() {
         <div className="mb-4 flex items-center justify-center gap-2">
           <span className="h-px w-8 bg-accent/50" />
           <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-accent">
-            Software Engineer
+            AI/ML-Focused Software Engineering Student
           </span>
           <span className="h-px w-8 bg-accent/50" />
         </div>
@@ -188,7 +188,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1 }}
           className="mt-4 font-body text-lg text-text-muted md:text-xl"
         >
-          I build systems that scale, protocols that trustlessly transact, and AI that explains itself.
+          I build applied AI products with Python, FastAPI, NLP, machine learning, and full-stack deployment.
         </motion.p>
 
         <motion.div
@@ -220,6 +220,12 @@ export default function Hero() {
             className="inline-flex h-12 items-center gap-2 rounded-full border border-[#1a1a1a] px-6 font-medium text-text-primary transition-all hover:border-accent/50 hover:text-accent"
           >
             Get in Touch
+          </MagneticButton>
+          <MagneticButton
+            href="/Abdul-Rafay-Imran-CV.pdf"
+            className="inline-flex h-12 items-center gap-2 rounded-full border border-[#1a1a1a] px-6 font-medium text-text-primary transition-all hover:border-accent/50 hover:text-accent"
+          >
+            Download CV
           </MagneticButton>
         </motion.div>
       </div>

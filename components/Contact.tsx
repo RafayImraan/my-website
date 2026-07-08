@@ -2,12 +2,13 @@
 
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Mail, Globe, GitFork, ArrowUpRight, Send, Loader2 } from "lucide-react";
+import { Mail, Globe, GitFork, ArrowUpRight, Send, Loader2, CirclePlay } from "lucide-react";
 
 const links = [
   { icon: Mail, label: "aburafayyy@gmail.com", href: "mailto:aburafayyy@gmail.com" },
-  { icon: Globe, label: "linkedin.com/in/aburafayyy", href: "https://linkedin.com/in/aburafayyy" },
+  { icon: Globe, label: "linkedin.com/in/abdul-rafay-imran", href: "https://www.linkedin.com/in/abdul-rafay-imran-957b44276/" },
   { icon: GitFork, label: "github.com/RafayImraan", href: "https://github.com/RafayImraan" },
+  { icon: CirclePlay, label: "youtube.com/@aburafayyy7604", href: "https://www.youtube.com/@aburafayyy7604" },
 ];
 
 function FloatingInput({ label, id, type = "text", multiline = false }: { label: string; id: string; type?: string; multiline?: boolean }) {
@@ -117,8 +118,8 @@ export default function Contact() {
             Ready to <span className="text-gradient">Ship?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-base text-text-muted md:text-lg">
-            I&apos;m actively looking for engineering roles where I can build complex,
-            real-world systems across the full stack. If that sounds like your team,
+            I&apos;m looking for software engineering roles across full-stack, frontend,
+            backend, and AI-enabled product development. If my work fits your team,
             let&apos;s talk.
           </p>
         </motion.div>

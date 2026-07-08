@@ -8,11 +8,12 @@ import SplitText from "./SplitText";
 
 const featured: ProjectData[] = [
   {
-    title: "ShadowPay",
+    title: "Reality Check",
     description:
-      "ZK-proof payment flows on Starknet L2 with Pedersen commitments and nullifier-tree double-spend prevention.",
-    stack: ["Cairo", "Starknet", "Next.js", "ZK-proofs"],
-    github: "https://github.com/RafayImraan/-ShadowPay",
+      "Explainable NLP platform detecting fear, urgency, authority abuse, and polarization with transformer analysis, confidence scoring, and evidence trails.",
+    stack: ["React", "FastAPI", "Transformers", "NLP"],
+    github: "https://github.com/RafayImraan/realitycheck",
+    video: "https://youtu.be/Zy2hAV6sjCk?si=73lIRE_TJgzqi48j",
     featured: true,
   },
   {
@@ -24,30 +25,32 @@ const featured: ProjectData[] = [
     featured: true,
   },
   {
-    title: "Reality Check",
+    title: "GridMind AI",
     description:
-      "Full-stack NLP platform detecting fear, urgency, authority abuse, and polarization in text with fairness auditing and confidence scoring.",
-    stack: ["React", "FastAPI", "Transformers", "NLP"],
-    github: "https://github.com/RafayImraan/realitycheck",
+      "Hybrid ML engine predicting utility failures across power, water, traffic, and transformer grids with cascading-failure simulation.",
+    stack: ["FastAPI", "scikit-learn", "React"],
+    github: "https://github.com/RafayImraan/GridMind",
+    video: "https://youtu.be/KtwrvgjbZg0?si=N0qcjkZMCOo-gHNv",
     featured: true,
   },
 ];
 
 const medium: ProjectData[] = [
   {
-    title: "trick",
-    description:
-      "Privacy-first crypto transfer dApp on TRON with stealth addresses, shareable payment links, and OAuth via NextAuth — TRX/USDT with full anonymity.",
-    stack: ["Next.js", "Solidity", "TronWeb", "Prisma", "Tailwind CSS"],
-    github: "https://github.com/RafayImraan/trick",
-    medium: true,
-  },
-  {
     title: "MedIntel-AI",
     description:
       "Clinical decision intelligence engine ingesting unstructured medical reports, extracting biomarkers, predicting disease risk via Random Forest, and explaining results with SHAP.",
     stack: ["FastAPI", "scikit-learn", "SHAP", "Transformers", "React"],
     github: "https://github.com/RafayImraan/MedIntel-AI",
+    medium: true,
+  },
+  {
+    title: "MedAssist",
+    description:
+      "Offline-capable clinical triage assistant using MedGemma to evaluate symptoms, vitals, and history with Docker deployment options.",
+    stack: ["React", "FastAPI", "MedGemma", "Docker"],
+    github: "https://github.com/RafayImraan/medassist",
+    video: "https://youtu.be/lUVYx0slGJY?si=XJuEOBPiCEffZIzH",
     medium: true,
   },
   {
@@ -59,19 +62,19 @@ const medium: ProjectData[] = [
     medium: true,
   },
   {
-    title: "BSwap",
+    title: "Skill-to-Job Gap Visualizer",
     description:
-      "Trustless Bitcoin \u2194 Hedera swaps using SHA-256 HTLCs \u2014 non-custodial, no intermediaries, no trust required.",
-    stack: ["Next.js", "Bitcoin Testnet", "Hedera", "HTLC"],
-    github: "https://github.com/RafayImraan/BSwap",
+      "AI-powered platform mapping user skills against job market demands via NLP, generating personalized learning roadmaps with radar charts and heatmaps.",
+    stack: ["Next.js", "FastAPI", "spaCy", "Transformers", "Recharts"],
+    github: "https://github.com/RafayImraan/skill-to-job-gap-visualizer",
     medium: true,
   },
   {
-    title: "MedAssist",
+    title: "Crop Yield Prediction",
     description:
-      "Offline-capable triage using MedGemma \u2014 evaluates symptoms, vitals, and history. Runs on CPU and GPU via Docker.",
-    stack: ["React", "FastAPI", "MedGemma", "Docker"],
-    github: "https://github.com/RafayImraan/medassist",
+      "ML models predicting crop yields using soil, climate, and historical data with feature engineering and explainability.",
+    stack: ["Python", "scikit-learn", "Pandas", "NumPy"],
+    github: "https://github.com/RafayImraan/crop-yeild-prediction-in-pakistan",
     medium: true,
   },
   {
@@ -86,25 +89,25 @@ const medium: ProjectData[] = [
 
 const small: ProjectData[] = [
   {
-    title: "Skill-to-Job Gap Visualizer",
+    title: "ShadowPay",
     description:
-      "AI-powered platform mapping user skills against job market demands via NLP, generating personalized learning roadmaps with radar charts and heatmaps.",
-    stack: ["Next.js", "FastAPI", "spaCy", "Transformers", "Recharts"],
-    github: "https://github.com/RafayImraan/skill-to-job-gap-visualizer",
+      "ZK-proof payment flows on Starknet L2 with Pedersen commitments and nullifier-tree double-spend prevention.",
+    stack: ["Cairo", "Starknet", "Next.js", "ZK-proofs"],
+    github: "https://github.com/RafayImraan/-ShadowPay",
   },
   {
     title: "ARIA: City of Silence",
     description:
-      "Dark interactive narrative-driven web experience built with React, Vite, and Tailwind — featuring a custom game engine and QR code generation.",
+      "Interactive narrative simulation with branching flows, live audience voting, configurable voting windows, and dynamic state updates.",
     stack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/RafayImraan/ARIA-City-of-Silence",
   },
   {
-    title: "GridMind AI",
+    title: "BSwap",
     description:
-      "Hybrid ML engine predicting utility failures across power, water, traffic, and transformer grids with cascading-failure simulation.",
-    stack: ["FastAPI", "scikit-learn", "React"],
-    github: "https://github.com/RafayImraan/GridMind",
+      "Trustless Bitcoin to Hedera swaps using SHA-256 HTLCs with non-custodial claim, refund, and monitoring flows.",
+    stack: ["Next.js", "Bitcoin Testnet", "Hedera", "HTLC"],
+    github: "https://github.com/RafayImraan/BSwap",
   },
   {
     title: "GitHub Time Machine",
@@ -126,13 +129,6 @@ const small: ProjectData[] = [
       "Conversion-focused e-commerce storefront with dynamic product management, admin panel, and switchable JSON/MongoDB backend.",
     stack: ["Next.js", "MongoDB", "React", "Node.js"],
     github: "https://github.com/RafayImraan/gadgetwise",
-  },
-  {
-    title: "Crop Yield Prediction",
-    description:
-      "ML models predicting crop yields using soil, climate, and historical data with feature engineering and explainability.",
-    stack: ["Python", "scikit-learn", "Pandas", "NumPy"],
-    github: "https://github.com/RafayImraan/crop-yeild-prediction-in-pakistan",
   },
 ];
 
@@ -160,7 +156,7 @@ export default function Projects() {
             Things I&apos;ve Shipped
           </span>
           <SplitText
-            text="Production-Grade Projects"
+            text="Applied AI and ML Projects"
             as="h2"
             className="section-heading mt-2 text-text-primary"
           />

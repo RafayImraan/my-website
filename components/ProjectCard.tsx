@@ -2,13 +2,14 @@
 
 import { useRef } from "react";
 import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
-import { ExternalLink, GitFork } from "lucide-react";
+import { ExternalLink, GitFork, Play } from "lucide-react";
 
 export type ProjectData = {
   title: string;
   description: string;
   stack: string[];
   github: string;
+  video?: string;
   featured?: boolean;
   medium?: boolean;
 };
@@ -20,7 +21,7 @@ export default function ProjectCard({
   project: ProjectData;
   index: number;
 }) {
-  const { title, description, stack, github, featured, medium } = project;
+  const { title, description, stack, github, video, featured, medium } = project;
   const ref = useRef<HTMLAnchorElement>(null);
 
   const x = useMotionValue(0.5);
@@ -48,7 +49,7 @@ export default function ProjectCard({
   return (
     <motion.a
       ref={ref}
-      href={github}
+      href={video ?? github}
       target="_blank"
       rel="noopener noreferrer"
       onMouseMove={handleMouse}
@@ -90,7 +91,7 @@ export default function ProjectCard({
         </h3>
         <div className="mt-1 flex shrink-0 gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#1a1a1a] text-text-muted opacity-0 transition-all duration-300 group-hover:opacity-100">
-            <GitFork size={14} />
+            {video ? <Play size={14} /> : <GitFork size={14} />}
           </span>
           <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#1a1a1a] text-text-muted opacity-0 transition-all duration-300 group-hover:opacity-100">
             <ExternalLink size={14} />

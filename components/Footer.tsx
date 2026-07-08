@@ -1,6 +1,6 @@
 "use client";
 
-import { GitFork, Globe, Mail } from "lucide-react";
+import { GitFork, Globe, Mail, CirclePlay } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -26,13 +26,22 @@ export default function Footer() {
             <GitFork size={16} />
           </a>
           <a
-            href="https://linkedin.com/in/aburafayyy"
+            href="https://www.linkedin.com/in/abdul-rafay-imran-957b44276/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
             className="text-text-muted transition-colors hover:text-accent"
           >
             <Globe size={16} />
+          </a>
+          <a
+            href="https://www.youtube.com/@aburafayyy7604"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="text-text-muted transition-colors hover:text-accent"
+          >
+            <CirclePlay size={16} />
           </a>
           <a
             href="mailto:aburafayyy@gmail.com"

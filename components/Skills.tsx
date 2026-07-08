@@ -21,7 +21,15 @@ const skillGroups: {
   {
     name: "Languages",
     icon: Code2,
-    skills: ["Python", "JavaScript", "TypeScript", "SQL", "Solidity", "Cairo", "PHP"],
+    skills: ["Python", "SQL", "JavaScript", "TypeScript", "PHP", "Solidity", "Cairo"],
+  },
+  {
+    name: "AI / ML",
+    icon: Brain,
+    skills: [
+      "scikit-learn", "XGBoost", "Random Forest", "Transformers",
+      "NLP", "MedGemma", "SHAP", "Pandas", "NumPy", "Explainable AI",
+    ],
   },
   {
     name: "Frontend",
@@ -45,14 +53,6 @@ const skillGroups: {
     name: "DevOps",
     icon: Container,
     skills: ["Docker", "Git", "GitHub", "CI/CD", "Containerization"],
-  },
-  {
-    name: "AI / ML",
-    icon: Brain,
-    skills: [
-      "scikit-learn", "XGBoost", "Transformers",
-      "NLP", "Pandas", "NumPy", "Explainable AI",
-    ],
   },
   {
     name: "Blockchain / Web3",
@@ -83,7 +83,7 @@ export default function Skills() {
             What I Build With
           </span>
           <SplitText
-            text="The Full Stack Arsenal"
+            text="AI/ML Toolkit and Deployment Stack"
             as="h2"
             className="section-heading mt-2 text-text-primary"
           />

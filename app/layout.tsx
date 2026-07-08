@@ -27,13 +27,13 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aburafayyy.vercel.app"),
-  title: "Abdul Rafay Imran | Software Engineer",
+  title: "Abdul Rafay Imran | AI/ML Developer",
   description:
-    "I build systems that scale, protocols that trustlessly transact, and AI that explains itself. Software engineer across backend, full-stack, Web3, and AI/ML.",
+    "AI/ML-focused Software Engineering student building applied AI products with Python, FastAPI, NLP, machine learning, and full-stack deployment.",
   openGraph: {
-    title: "Abdul Rafay Imran | Software Engineer",
+    title: "Abdul Rafay Imran | AI/ML Developer",
     description:
-      "I build systems that scale, protocols that trustlessly transact, and AI that explains itself.",
+      "Applied AI and machine learning portfolio covering NLP, clinical triage, phishing detection, explainability, and full-stack deployment.",
     url: "https://aburafayyy.vercel.app",
     siteName: "Abdul Rafay Imran",
     type: "website",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Rafay Imran | Software Engineer",
+    title: "Abdul Rafay Imran | AI/ML Developer",
     description:
-      "I build systems that scale, protocols that trustlessly transact, and AI that explains itself.",
+      "Applied AI and machine learning portfolio covering NLP, clinical triage, phishing detection, explainability, and full-stack deployment.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   robots: {

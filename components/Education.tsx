@@ -8,20 +8,20 @@ const education = [
     icon: GraduationCap,
     title: "BS Software Engineering",
     institution: "University of Karachi",
-    period: "2023 \u2013 May 2027",
+    period: "2023 - Present",
   },
   {
     icon: GraduationCap,
     title: "Diploma in Software Engineering",
     institution: "Aptech Learning",
-    period: "2022 \u2013 2026",
+    period: "2022 - 2025",
   },
 ];
 
-const certifications = [
-  "Intermediate Machine Learning \u2014 Kaggle",
-  "Machine Learning Explainability \u2014 Kaggle",
-  "Data Visualization \u2014 Kaggle",
+const credentials = [
+  { icon: Award, label: "Intermediate Machine Learning - Kaggle" },
+  { icon: Award, label: "Machine Learning Explainability - Kaggle" },
+  { icon: Award, label: "Data Visualization - Kaggle" },
 ];
 
 export default function Education() {
@@ -77,22 +77,25 @@ export default function Education() {
 
           <div>
             <h3 className="mb-6 font-display text-lg font-bold text-text-primary">
-              Certifications
+              Certificates
             </h3>
             <div className="space-y-3">
-              {certifications.map((cert, i) => (
+              {credentials.map((credential, i) => {
+                const Icon = credential.icon;
+                return (
                 <motion.div
-                  key={cert}
+                  key={credential.label}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.5, delay: i * 0.12 }}
                   className="flex items-center gap-3 rounded-xl border border-[#1a1a1a] bg-[#0f0f0f] p-4"
                 >
-                  <Award className="h-4 w-4 shrink-0 text-[#c8a96e]" />
-                  <span className="font-body text-sm text-text-muted">{cert}</span>
+                  <Icon className="h-4 w-4 shrink-0 text-[#c8a96e]" />
+                  <span className="font-body text-sm text-text-muted">{credential.label}</span>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

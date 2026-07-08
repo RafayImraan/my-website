@@ -6,31 +6,42 @@
     "phone": "+92 333 2427539",
     "github": "https://github.com/RafayImraan",
     "linkedin": "https://www.linkedin.com/in/abdul-rafay-imran-957b44276/",
+    "youtube": "https://www.youtube.com/@aburafayyy7604",
     "cvPath": "/Abdul-Rafay-Imran-CV.pdf",
-    "tagline": "Software Engineer focused on full-stack web development, machine learning, and data-driven products.",
-    "about": "I build reliable applications with clean architecture, practical user experience, and maintainable code. My work spans web development, applied machine learning, and analytics, with a focus on solving real problems clearly and professionally.",
+    "tagline": "AI/ML-focused Software Engineering student building applied AI products with Python, FastAPI, NLP, and machine learning.",
+    "about": "I build applied AI systems where models are useful inside real workflows: manipulation-risk scoring, phishing detection, clinical triage, infrastructure failure prediction, crop-yield forecasting, and skill-gap analysis.",
     "highlights": [
-      "Full-stack web applications with Next.js, React, and backend integrations",
-      "Applied machine learning projects with clear, explainable workflows",
-      "Responsive interfaces, reusable components, and performance-focused development"
+      "Applied AI projects using NLP, machine learning, explainability, and model-backed workflows",
+      "Python and FastAPI systems connected to practical React and Next.js interfaces",
+      "Machine learning projects across healthcare, cybersecurity, agriculture, infrastructure, and analytics"
     ],
     "skills": {
       "technologies": [
         "JavaScript",
         "TypeScript",
+        "Solidity",
+        "Cairo",
         "React",
         "Next.js",
         "Angular",
         "PHP",
         "Express.js",
+        "Node.js",
+        "FastAPI",
         "Python",
         "Pandas",
         "Matplotlib",
-        "Seaborn"
+        "Seaborn",
+        "scikit-learn",
+        "XGBoost",
+        "Transformers",
+        "Random Forest",
+        "MedGemma",
+        "SHAP"
       ],
       "dashboards": ["Power BI"],
-      "databases": ["SQL", "MongoDB"],
-      "additional": ["MS Office", "Canva"]
+      "databases": ["SQL", "MongoDB", "MySQL", "Redis"],
+      "additional": ["Docker", "Git", "GitHub", "CI/CD", "Hedera", "Starknet", "EVM", "ZK-Proofs", "HTLCs"]
     },
     "softSkills": [
       "Effective communication",
@@ -43,7 +54,10 @@
     "languages": ["English", "Urdu"],
     "achievements": [
       "First Prize, Speed Programming Competition - Aptech Learning (2023)",
-      "Second Prize, Web Designing Competition - Aptech Learning (2023)"
+      "Second Prize, Web Designing Competition - Aptech Learning (2023)",
+      "Intermediate Machine Learning - Kaggle",
+      "Machine Learning Explainability - Kaggle",
+      "Data Visualization - Kaggle"
     ],
     "experience": [
       {
@@ -54,7 +68,7 @@
       {
         "role": "Diploma in Software Engineering",
         "org": "Aptech Learning, Karachi, Pakistan",
-        "period": "2022 - Present"
+        "period": "2022 - 2025"
       },
       {
         "role": "Intermediate",

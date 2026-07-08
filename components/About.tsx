@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import ProgressRing from "./ProgressRing";
-import { Code2, Layers, Blocks, Cpu } from "lucide-react";
+import { Code2, Layers, Brain, Cpu } from "lucide-react";
 import SplitText from "./SplitText";
 
 const stats = [
-  { icon: Code2, value: 16, max: 16, label: "Projects Shipped" },
-  { icon: Layers, value: 4, max: 5, label: "Domains Mastered" },
-  { icon: Blocks, value: 2, max: 3, label: "Blockchains Built On" },
+  { icon: Code2, value: 17, max: 17, label: "Projects Shipped" },
+  { icon: Brain, value: 7, max: 10, label: "AI/ML Projects" },
+  { icon: Layers, value: 4, max: 5, label: "Applied Domains" },
   { icon: Cpu, value: 3, max: 5, label: "AI Frameworks" },
 ];
 
@@ -26,7 +26,7 @@ export default function About() {
             Who I Am
           </span>
           <SplitText
-            text="Engineering the Full Stack of Tomorrow"
+            text="Applied AI Backed by Full-Stack Engineering"
             as="h2"
             className="section-heading mt-2 text-text-primary"
           />
@@ -40,17 +40,20 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <p className="font-body text-base leading-relaxed text-text-muted md:text-lg">
-              I&apos;m a software engineer from Karachi shipping real software across the full stack{" "}
-              &mdash; ZK-proof protocols on Starknet, FastAPI backends, React frontends, and ML systems
-              that explain their decisions. I don&apos;t follow tutorials. I build products.
+              I&apos;m a Software Engineering student from Karachi focused on AI/ML
+              roles, applied machine learning, and full-stack AI products. My work
+              spans Python, FastAPI, scikit-learn, transformers, NLP, MedGemma,
+              and deployable React/Next.js interfaces.
             </p>
             <p className="mt-4 font-body text-base leading-relaxed text-text-muted md:text-lg">
-              From trustless cross-chain atomic swaps to AI that audits its own bias &mdash; every project
-              I ship solves a real problem with production-grade engineering. No toy repos. No
-              abandoned side projects.
+              I build systems where models are useful inside real workflows: phishing
+              detection, clinical triage, manipulation-risk scoring, infrastructure
+              failure prediction, crop-yield forecasting, and skill-gap analysis. The
+              focus is not only training models, but making predictions explainable,
+              usable, and reviewable.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {["Backend \u00B7 Full-Stack", "Web3 \u00B7 Smart Contracts", "AI/ML \u00B7 Explainable AI"].map(
+              {["Python \u00B7 FastAPI", "ML \u00B7 NLP \u00B7 Transformers", "Explainable AI \u00B7 Deployed Products"].map(
                 (tag) => (
                   <span
                     key={tag}
